@@ -4,7 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "build:app": "ng build example",
+    "build:lib": "ng build ngk-tailwindcss",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
