@@ -15,6 +15,7 @@
       "ngk-tailwindcss": [
         "dist/ngk-tailwindcss"
       ]
+      
     },
     "declaration": false,
     "downlevelIteration": true,
