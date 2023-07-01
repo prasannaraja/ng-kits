@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { NgkTailwindcssComponent } from './components/default/ngk-tailwindcss.component';
 import { AutoCompleteComponent } from './components/auto-complete/auto-complete.component';
 import { ButtonComponent } from './components/button/button.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
