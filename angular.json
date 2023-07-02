@@ -129,39 +129,6 @@
           }
         }
       }
-    },
-    "ngk-tailwindcss": {
-      "projectType": "library",
-      "root": "projects/ngk-tailwindcss",
-      "sourceRoot": "projects/ngk-tailwindcss/src",
-      "prefix": "ngk",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "projects/ngk-tailwindcss/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/ngk-tailwindcss/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "projects/ngk-tailwindcss/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "tsConfig": "projects/ngk-tailwindcss/tsconfig.spec.json",
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ]
-          }
-        }
-      }
     }
   }
 }
