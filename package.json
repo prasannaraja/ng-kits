@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve ngk-tailwindcss-examples",
+    "start": "ng serve ngk-examples",
     "build:ngk-tailwindcss": "ng build ngk-tailwindcss",
     "build:ngk-composite-builder": "ng build ngk-composite-builder",
     "build:ngk-examples": "ng build ngk-examples",
@@ -21,6 +21,7 @@
     "@angular/platform-browser": "^16.0.0",
     "@angular/platform-browser-dynamic": "^16.0.0",
     "@angular/router": "^16.0.0",
+    "@ngkits/composite-builder": "file:dist/ngk-composite-builder/ngkits-composite-builder-0.0.1.tgz",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.13.0"
