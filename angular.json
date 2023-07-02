@@ -3,31 +3,65 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "example": {
+    "ngk-tailwindcss": {
+      "projectType": "library",
+      "root": "projects/ngk-tailwindcss",
+      "sourceRoot": "projects/ngk-tailwindcss/src",
+      "prefix": "ngk",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ngk-tailwindcss/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngk-tailwindcss/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ngk-tailwindcss/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/ngk-tailwindcss/tsconfig.spec.json",
+            "polyfills": ["zone.js", "zone.js/testing"]
+          }
+        }
+      }
+    },
+    "ngk-tailwindcss-examples": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
         }
       },
-      "root": "projects/example",
-      "sourceRoot": "projects/example/src",
-      "prefix": "ngk",
+      "root": "projects/ngk-tailwindcss-examples",
+      "sourceRoot": "projects/ngk-tailwindcss-examples/src",
+      "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/example",
-            "index": "projects/example/src/index.html",
-            "main": "projects/example/src/main.ts",
-            "polyfills": ["zone.js"],
-            "tsConfig": "projects/example/tsconfig.app.json",
+            "outputPath": "dist/ngk-tailwindcss-examples",
+            "index": "projects/ngk-tailwindcss-examples/src/index.html",
+            "main": "projects/ngk-tailwindcss-examples/src/main.ts",
+            "polyfills": [
+              "zone.js"
+            ],
+            "tsConfig": "projects/ngk-tailwindcss-examples/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "projects/example/src/favicon.ico",
-              "projects/example/src/assets"
+              "projects/ngk-tailwindcss-examples/src/favicon.ico",
+              "projects/ngk-tailwindcss-examples/src/assets"
             ],
-            "styles": ["projects/example/src/styles.scss"],
+            "styles": [
+              "projects/ngk-tailwindcss-examples/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -61,10 +95,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "example:build:production"
+              "browserTarget": "ngk-tailwindcss-examples:build:production"
             },
             "development": {
-              "browserTarget": "example:build:development"
+              "browserTarget": "ngk-tailwindcss-examples:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -72,20 +106,25 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "example:build"
+            "browserTarget": "ngk-tailwindcss-examples:build"
           }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": ["zone.js", "zone.js/testing"],
-            "tsConfig": "projects/example/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ],
+            "tsConfig": "projects/ngk-tailwindcss-examples/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "projects/example/src/favicon.ico",
-              "projects/example/src/assets"
+              "projects/ngk-tailwindcss-examples/src/favicon.ico",
+              "projects/ngk-tailwindcss-examples/src/assets"
             ],
-            "styles": ["projects/example/src/styles.scss"],
+            "styles": [
+              "projects/ngk-tailwindcss-examples/src/styles.scss"
+            ],
             "scripts": []
           }
         }
