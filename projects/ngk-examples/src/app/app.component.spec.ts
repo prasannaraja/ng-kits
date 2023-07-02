@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'ngk-tailwindcss-examples'`, () => {
+  it(`should have as title 'ngk-examples'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('ngk-tailwindcss-examples');
+    expect(app.title).toEqual('ngk-examples');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('ngk-tailwindcss-examples app is running!');
+    expect(compiled.querySelector('.content span')?.textContent).toContain('ngk-examples app is running!');
   });
 });

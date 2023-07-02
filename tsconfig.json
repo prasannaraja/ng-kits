@@ -12,6 +12,9 @@
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
     "paths": {
+      "ngk-composite-builder": [
+        "dist/ngk-composite-builder"
+      ],
       "ngk-tailwindcss": [
         "dist/ngk-tailwindcss"
       ]

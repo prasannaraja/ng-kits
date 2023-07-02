@@ -33,34 +33,34 @@
         }
       }
     },
-    "ngk-tailwindcss-examples": {
+    "ngk-examples": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss"
         }
       },
-      "root": "projects/ngk-tailwindcss-examples",
-      "sourceRoot": "projects/ngk-tailwindcss-examples/src",
+      "root": "projects/ngk-examples",
+      "sourceRoot": "projects/ngk-examples/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ngk-tailwindcss-examples",
-            "index": "projects/ngk-tailwindcss-examples/src/index.html",
-            "main": "projects/ngk-tailwindcss-examples/src/main.ts",
+            "outputPath": "dist/ngk-examples",
+            "index": "projects/ngk-examples/src/index.html",
+            "main": "projects/ngk-examples/src/main.ts",
             "polyfills": [
               "zone.js"
             ],
-            "tsConfig": "projects/ngk-tailwindcss-examples/tsconfig.app.json",
+            "tsConfig": "projects/ngk-examples/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "projects/ngk-tailwindcss-examples/src/favicon.ico",
-              "projects/ngk-tailwindcss-examples/src/assets"
+              "projects/ngk-examples/src/favicon.ico",
+              "projects/ngk-examples/src/assets"
             ],
             "styles": [
-              "projects/ngk-tailwindcss-examples/src/styles.scss"
+              "projects/ngk-examples/src/styles.scss"
             ],
             "scripts": []
           },
@@ -95,10 +95,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "ngk-tailwindcss-examples:build:production"
+              "browserTarget": "ngk-examples:build:production"
             },
             "development": {
-              "browserTarget": "ngk-tailwindcss-examples:build:development"
+              "browserTarget": "ngk-examples:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -106,7 +106,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ngk-tailwindcss-examples:build"
+            "browserTarget": "ngk-examples:build"
           }
         },
         "test": {
@@ -116,16 +116,49 @@
               "zone.js",
               "zone.js/testing"
             ],
-            "tsConfig": "projects/ngk-tailwindcss-examples/tsconfig.spec.json",
+            "tsConfig": "projects/ngk-examples/tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-              "projects/ngk-tailwindcss-examples/src/favicon.ico",
-              "projects/ngk-tailwindcss-examples/src/assets"
+              "projects/ngk-examples/src/favicon.ico",
+              "projects/ngk-examples/src/assets"
             ],
             "styles": [
-              "projects/ngk-tailwindcss-examples/src/styles.scss"
+              "projects/ngk-examples/src/styles.scss"
             ],
             "scripts": []
+          }
+        }
+      }
+    },
+    "ngk-composite-builder": {
+      "projectType": "library",
+      "root": "projects/ngk-composite-builder",
+      "sourceRoot": "projects/ngk-composite-builder/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ngk-composite-builder/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngk-composite-builder/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ngk-composite-builder/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "tsConfig": "projects/ngk-composite-builder/tsconfig.spec.json",
+            "polyfills": [
+              "zone.js",
+              "zone.js/testing"
+            ]
           }
         }
       }
