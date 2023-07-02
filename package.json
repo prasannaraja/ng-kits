@@ -4,9 +4,11 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve ngk-tailwindcss-examples",
-    "build:lib": "ng build ngk-tailwindcss",
-    "build:app": "ng build ngk-tailwindcss-examples",
-    "watch": "ng build --watch --configuration development",
+    "build:ngk-tailwindcss": "ng build ngk-tailwindcss",
+    "build:ngk-composite-builder": "ng build ngk-composite-builder",
+    "build:ngk-examples": "ng build ngk-examples",
+    "watch:ngk-tailwindcss": "ng build ngk-tailwindcss --watch --configuration development",
+    "watch:ngk-composite-builder": "ng build ngk-composite-builder --watch --configuration development",
     "test": "ng test"
   },
   "private": true,
