@@ -1,9 +1,13 @@
 import { Injectable } from '@angular/core';
+import { FormBuilderService } from './form-builder.service';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class NgkCompositeBuilderService {
+  constructor(private formBuilderService: FormBuilderService) {}
 
-  constructor() { }
+  buildForm(formUi: any) {
+    return this.formBuilderService.buildForm(formUi);
+  }
 }
