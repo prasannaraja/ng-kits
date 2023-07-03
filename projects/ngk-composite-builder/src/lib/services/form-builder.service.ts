@@ -7,10 +7,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class FormBuilderService {
   constructor(private formBuilder: FormBuilder) {}
 
-  buildForm(formData: any): FormGroup {
+  buildForm(formUi: any): FormGroup {
     const formGroup = this.formBuilder.group({});
 
-    formData.groups.forEach((group: any) => {
+    formUi.groups.forEach((group: any) => {
       group.fields.forEach((field: any) => {
         const formControl = this.createFormControl(field);
         if (field.hidden) {
