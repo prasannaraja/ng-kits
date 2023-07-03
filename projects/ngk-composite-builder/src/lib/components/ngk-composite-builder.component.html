@@ -1,1 +1,37 @@
-<p>ngk-composite-builder works!</p>
+<form [formGroup]="form" (ngSubmit)="submitForm()">
+  <div *ngFor="let group of groups">
+    <div class="group-name">{{ group.name }}</div>
+    <div *ngFor="let field of group.fields" [ngSwitch]="field.type">
+      <div *ngSwitchCase="fieldType.TextBox">
+        <label>{{ field.name }}</label>
+        <input type="text" [formControlName]="field.name" title="field.name" />
+      </div>
+      <div *ngSwitchCase="fieldType.RadioButtonGroup">
+        <label>{{ field.name }}</label>
+        <div *ngFor="let item of field.items">
+          <input
+            type="radio"
+            [formControlName]="field.name"
+            title="field.name"
+            [value]="item.value"
+          />
+          {{ item.label }}
+        </div>
+      </div>
+      <div *ngSwitchCase="fieldType.CheckBoxGroup">
+        <label>{{ field.name }}</label>
+        <div *ngFor="let item of field.items">
+          <input
+            type="checkbox"
+            [formControlName]="field.name"
+            title="field.name"
+            [value]="item.value"
+          />
+          {{ item.label }}
+        </div>
+      </div>
+      <!-- Add more cases for other field types as needed -->
+    </div>
+  </div>
+  <button type="submit">Submit</button>
+</form>

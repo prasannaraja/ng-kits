@@ -1,8 +1,11 @@
 import { Component } from '@angular/core';
+import { formUi } from '../../models';
 
 @Component({
-  selector: 'app-composite-builder-example',
+  selector: 'composite-builder-example',
   templateUrl: './composite-builder-example.component.html',
   styleUrls: ['./composite-builder-example.component.scss'],
 })
-export class CompositeBuilderExampleComponent {}
+export class CompositeBuilderExampleComponent {
+  UIModel = formUi;
+}
