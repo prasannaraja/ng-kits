@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FormUI, Group, FIELD_TYPE } from '../models';
 
@@ -7,29 +7,39 @@ import { FormUI, Group, FIELD_TYPE } from '../models';
   templateUrl: './ngk-composite-builder.component.html',
   styleUrls: ['./ngk-composite-builder.component.scss'],
 })
-export class NgkCompositeBuilderComponent implements AfterViewInit {
+export class NgkCompositeBuilderComponent implements OnInit {
   @Input()
   formUi!: FormUI;
-  form: FormGroup;
 
+  form: FormGroup;
   constructor(private formBuilder: FormBuilder) {
     this.form = this.formBuilder.group({});
   }
 
-  ngAfterViewInit(): void {
+  ngOnInit(): void {
     this.generateForm();
+  }
+
+  addGroup(groupName: string): void {
+    const newGroup = new FormGroup({});
+    this.form.addControl(groupName, newGroup);
+  }
+
+  addField(groupName: string, fieldName: string, validators: []): void {
+    const group = this.form.get(groupName) as FormGroup;
+    const formControl = this.formBuilder.control(null, validators);
+    group.addControl(fieldName, formControl);
   }
 
   generateForm(): void {
     this.formUi.groups.forEach((group) => {
+      this.addGroup(group.name);
       group.fields.forEach((field) => {
         const validators = [];
         if (field.mandatory) {
           validators.push(Validators.required);
         }
-
-        const formControl = this.formBuilder.control('', validators);
-        this.form.addControl(field.name, formControl);
+        this.addField(group.name, field.name, []);
       });
     });
   }
@@ -40,14 +50,5 @@ export class NgkCompositeBuilderComponent implements AfterViewInit {
 
   get fieldType() {
     return FIELD_TYPE;
-  }
-
-  submitForm(): void {
-    if (this.form.valid) {
-      // Perform form submission logic here
-      console.log(this.form.value);
-    } else {
-      // Display error messages or handle invalid form
-    }
   }
 }
