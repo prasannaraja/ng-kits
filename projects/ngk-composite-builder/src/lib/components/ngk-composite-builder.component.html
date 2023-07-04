@@ -1,23 +1,45 @@
-<form [formGroup]="form" (ngSubmit)="submitForm()">
+<form [formGroup]="form">
+  <!-- groups -->
   <div *ngFor="let group of groups">
+    <!-- group -->
     <div [formGroupName]="group.name">
       <div class="group-name">{{ group.name }}</div>
+      <!-- fields -->
       <div *ngFor="let field of group.fields" [ngSwitch]="field.type">
+        <!-- field -->
         <div *ngSwitchCase="fieldType.TextBox">
           <label>{{ field.name }}</label>
-          <input type="text" [formControlName]="field.name" title="field.name" />
+          <input
+            type="text"
+            [formControlName]="field.name"
+            class="form-control"
+            title="{{ field.name }}"
+          />
         </div>
+        <!-- field -->
         <div *ngSwitchCase="fieldType.RadioButtonGroup">
           <label>{{ field.name }}</label>
           <div *ngFor="let item of field.items">
-            <input type="radio" [formControlName]="field.name" title="field.name" [value]="item.value" />
+            <input
+              type="radio"
+              [formControlName]="field.name"
+              class="form-control"
+              title="{{ field.name }}"
+              [value]="item.value"
+            />
             {{ item.label }}
           </div>
         </div>
+        <!-- field -->
         <div *ngSwitchCase="fieldType.CheckBoxGroup">
           <label>{{ field.name }}</label>
           <div *ngFor="let item of field.items">
-            <input type="checkbox" [formControlName]="field.name" title="field.name" [value]="item.value" />
+            <input
+              type="checkbox"
+              [formControlName]="field.name"
+              title="{{ field.name }}"
+              [value]="item.value"
+            />
             {{ item.label }}
           </div>
         </div>
@@ -25,5 +47,4 @@
       </div>
     </div>
   </div>
-  <button type="submit">Submit</button>
 </form>
