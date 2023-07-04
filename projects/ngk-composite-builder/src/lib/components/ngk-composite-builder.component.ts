@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Inject, Input, OnInit } from '@angular/core';
+import { AfterViewInit, Component, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FormUI, Group, FIELD_TYPE } from '../models';
 
@@ -7,14 +7,12 @@ import { FormUI, Group, FIELD_TYPE } from '../models';
   templateUrl: './ngk-composite-builder.component.html',
   styleUrls: ['./ngk-composite-builder.component.scss'],
 })
-export class NgkCompositeBuilderComponent implements OnInit, AfterViewInit {
+export class NgkCompositeBuilderComponent implements AfterViewInit {
   @Input()
   formUi!: FormUI;
-  form!: FormGroup;
+  form: FormGroup;
 
-  constructor(@Inject(FormBuilder) private formBuilder: FormBuilder) {}
-
-  ngOnInit(): void {
+  constructor(private formBuilder: FormBuilder) {
     this.form = this.formBuilder.group({});
   }
 
