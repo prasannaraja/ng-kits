@@ -4,9 +4,9 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve ngk-examples",
-    "build:ngk-tailwindcss": "ng build ngk-tailwindcss",
-    "build:ngk-composite-builder": "ng build ngk-composite-builder",
-    "build:ngk-examples": "ng build ngk-examples",
+    "build:tc": "ng build ngk-tailwindcss",
+    "build:cb": "ng build ngk-composite-builder",
+    "build:ex": "ng build ngk-examples",
     "watch:ngk-tailwindcss": "ng build ngk-tailwindcss --watch --configuration development",
     "watch:ngk-composite-builder": "ng build ngk-composite-builder --watch --configuration development",
     "test": "ng test"
