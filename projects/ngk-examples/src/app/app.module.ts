@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { CompositeBuilderExampleComponent } from './components/composite-builder-example/composite-builder-example.component';
-import { NgkCompositeBuilderModule } from 'ngk-composite-builder';
+import { NgkTailwindcssModule } from '@ngkits/tailwindcss';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, CompositeBuilderExampleComponent],
@@ -14,7 +14,7 @@ import { NgkCompositeBuilderModule } from 'ngk-composite-builder';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    NgkCompositeBuilderModule,
+    NgkTailwindcssModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

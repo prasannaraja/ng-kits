@@ -1,13 +1,13 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { FormUI, Group, FIELD_TYPE } from '../models';
+import { FIELD_TYPE, FormUI, Group } from '../../models';
 
 @Component({
-  selector: 'ngk-composite-builder',
-  templateUrl: './ngk-composite-builder.component.html',
-  styleUrls: ['./ngk-composite-builder.component.scss'],
+  selector: 'composite-builder',
+  templateUrl: './composite-builder.component.html',
+  styleUrls: ['./composite-builder.component.scss'],
 })
-export class NgkCompositeBuilderComponent implements OnInit {
+export class CompositeBuilderComponent implements OnInit {
   @Input()
   formUi!: FormUI;
 

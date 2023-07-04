@@ -8,6 +8,9 @@ import { ComboboxesComponent } from './components/comboboxes/comboboxes.componen
 import { InputFieldComponent } from './components/input-field/input-field.component';
 import { TableComponent } from './components/table/table.component';
 import { TextFieldComponent } from './components/text-field/text-field.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CompositeBuilderComponent } from './components/composite-builder/composite-builder.component';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -20,8 +23,9 @@ import { TextFieldComponent } from './components/text-field/text-field.component
     InputFieldComponent,
     TableComponent,
     TextFieldComponent,
+    CompositeBuilderComponent,
   ],
-  imports: [],
+  imports: [CommonModule, FormsModule, ReactiveFormsModule],
   exports: [
     AutoCompleteComponent,
     ButtonComponent,
@@ -32,6 +36,7 @@ import { TextFieldComponent } from './components/text-field/text-field.component
     InputFieldComponent,
     TableComponent,
     TextFieldComponent,
+    CompositeBuilderComponent,
   ],
 })
 export class NgkTailwindcssModule {}

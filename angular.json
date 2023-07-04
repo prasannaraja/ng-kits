@@ -129,39 +129,6 @@
           }
         }
       }
-    },
-    "ngk-composite-builder": {
-      "projectType": "library",
-      "root": "projects/ngk-composite-builder",
-      "sourceRoot": "projects/ngk-composite-builder/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "projects/ngk-composite-builder/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/ngk-composite-builder/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "projects/ngk-composite-builder/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "tsConfig": "projects/ngk-composite-builder/tsconfig.spec.json",
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ]
-          }
-        }
-      }
     }
   },
   "cli": {
