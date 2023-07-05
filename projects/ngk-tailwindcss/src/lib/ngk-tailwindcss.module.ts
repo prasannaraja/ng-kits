@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { AutoCompleteComponent } from './components/auto-complete/auto-complete.component';
 import { ButtonComponent } from './components/button/button.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
@@ -10,7 +11,7 @@ import { TableComponent } from './components/table/table.component';
 import { TextFieldComponent } from './components/text-field/text-field.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CompositeBuilderComponent } from './components/composite-builder/composite-builder.component';
-import { CommonModule } from '@angular/common';
+import { DropdownComponent } from './components/dropdown/dropdown.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,8 @@ import { CommonModule } from '@angular/common';
     CheckboxComponent,
     CheckboxGroupComponent,
     ComboboxesComponent,
+    CompositeBuilderComponent,
+    DropdownComponent,
     InputFieldComponent,
     TableComponent,
     TextFieldComponent,
@@ -33,6 +36,8 @@ import { CommonModule } from '@angular/common';
     CheckboxComponent,
     CheckboxGroupComponent,
     ComboboxesComponent,
+    CompositeBuilderComponent,
+    DropdownComponent,
     InputFieldComponent,
     TableComponent,
     TextFieldComponent,

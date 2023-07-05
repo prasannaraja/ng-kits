@@ -8,4 +8,7 @@ import { formUi } from '../../models';
 })
 export class CompositeBuilderExampleComponent {
   UIModel = formUi;
+  constructor() {
+    console.log(this.UIModel);
+  }
 }

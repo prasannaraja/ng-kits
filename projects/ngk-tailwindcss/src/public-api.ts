@@ -2,6 +2,8 @@
  * Public API Surface of ngk-tailwindcss
  */
 
+export * from './lib/models/enums';
+export * from './lib/models/interfaces/IFormUI';
 export * from './lib/components/auto-complete/auto-complete.component';
 export * from './lib/components/button/button.component';
 export * from './lib/components/calendar/calendar.component';

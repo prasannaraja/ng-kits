@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FIELD_TYPE, FormUI, Group } from '../../models';
 
 @Component({
-  selector: 'composite-builder',
+  selector: 'tailwind-composite-builder',
   templateUrl: './composite-builder.component.html',
   styleUrls: ['./composite-builder.component.scss'],
 })
@@ -13,16 +13,17 @@ export class CompositeBuilderComponent implements OnInit {
 
   form: FormGroup;
   constructor(private formBuilder: FormBuilder) {
+    console.log('tailwind-composite-builder:constructor');
     this.form = this.formBuilder.group({});
   }
 
   ngOnInit(): void {
+    console.log('tailwind-composite-builder:ngOnInit');
     this.generateForm();
   }
 
   addGroup(groupName: string): void {
-    const newGroup = new FormGroup({});
-    this.form.addControl(groupName, newGroup);
+    this.form.addControl(groupName, new FormGroup({}));
   }
 
   addField(groupName: string, fieldName: string, validators: []): void {

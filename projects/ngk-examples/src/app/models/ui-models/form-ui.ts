@@ -1,4 +1,4 @@
-import { FIELD_TYPE, FormUI } from 'ngk-composite-builder';
+import { FormUI } from '@ngkits/tailwindcss';
 
 export const formUi: FormUI = {
   groups: [
@@ -7,7 +7,7 @@ export const formUi: FormUI = {
       fields: [
         {
           name: 'TextField',
-          type: FIELD_TYPE.TextBox,
+          type: 0,
           hidden: false,
           mandatory: true,
           row: 1,
@@ -15,7 +15,7 @@ export const formUi: FormUI = {
         },
         {
           name: 'RadioButton',
-          type: FIELD_TYPE.RadioButton,
+          type: 1,
           hidden: false,
           mandatory: false,
           row: 2,
@@ -23,7 +23,7 @@ export const formUi: FormUI = {
         },
         {
           name: 'RadioButtonGroup',
-          type: FIELD_TYPE.RadioButtonGroup,
+          type: 2,
           hidden: false,
           mandatory: true,
           row: 3,
@@ -32,7 +32,7 @@ export const formUi: FormUI = {
         },
         {
           name: 'CheckBox',
-          type: FIELD_TYPE.CheckBox,
+          type: 3,
           hidden: false,
           mandatory: false,
           row: 4,
@@ -40,7 +40,7 @@ export const formUi: FormUI = {
         },
         {
           name: 'CheckBoxGroup',
-          type: FIELD_TYPE.CheckBoxGroup,
+          type: 4,
           hidden: false,
           mandatory: true,
           row: 5,
@@ -49,7 +49,7 @@ export const formUi: FormUI = {
         },
         {
           name: 'DropDown',
-          type: FIELD_TYPE.DropDown,
+          type: 5,
           hidden: false,
           mandatory: true,
           row: 6,
@@ -58,7 +58,7 @@ export const formUi: FormUI = {
         },
         {
           name: 'ComboBox',
-          type: FIELD_TYPE.ComboBox,
+          type: 6,
           hidden: false,
           mandatory: false,
           row: 7,
@@ -66,7 +66,7 @@ export const formUi: FormUI = {
         },
         {
           name: 'AutoComplete',
-          type: FIELD_TYPE.AutoComplete,
+          type: 7,
           hidden: true,
           mandatory: true,
           row: 8,
@@ -74,7 +74,7 @@ export const formUi: FormUI = {
         },
         {
           name: 'Grid',
-          type: FIELD_TYPE.Grid,
+          type: 8,
           hidden: false,
           mandatory: false,
           row: 9,
@@ -82,95 +82,7 @@ export const formUi: FormUI = {
         },
         {
           name: 'LookUp',
-          type: FIELD_TYPE.LookUp,
-          hidden: true,
-          mandatory: true,
-          row: 10,
-          column: 1,
-        },
-      ],
-    },
-    {
-      name: 'Group 2',
-      fields: [
-        {
-          name: 'TextField',
-          type: FIELD_TYPE.TextBox,
-          hidden: false,
-          mandatory: true,
-          row: 1,
-          column: 1,
-        },
-        {
-          name: 'RadioButton',
-          type: FIELD_TYPE.RadioButton,
-          hidden: false,
-          mandatory: false,
-          row: 2,
-          column: 1,
-        },
-        {
-          name: 'RadioButtonGroup',
-          type: FIELD_TYPE.RadioButtonGroup,
-          hidden: false,
-          mandatory: true,
-          row: 3,
-          column: 1,
-          items: ['Option 1', 'Option 2', 'Option 3'],
-        },
-        {
-          name: 'CheckBox',
-          type: FIELD_TYPE.CheckBox,
-          hidden: false,
-          mandatory: false,
-          row: 4,
-          column: 1,
-        },
-        {
-          name: 'CheckBoxGroup',
-          type: FIELD_TYPE.CheckBoxGroup,
-          hidden: false,
-          mandatory: true,
-          row: 5,
-          column: 1,
-          items: ['Option 1', 'Option 2', 'Option 3'],
-        },
-        {
-          name: 'DropDown',
-          type: FIELD_TYPE.DropDown,
-          hidden: false,
-          mandatory: true,
-          row: 6,
-          column: 1,
-          items: ['Option 1', 'Option 2', 'Option 3'],
-        },
-        {
-          name: 'ComboBox',
-          type: FIELD_TYPE.ComboBox,
-          hidden: false,
-          mandatory: false,
-          row: 7,
-          column: 1,
-        },
-        {
-          name: 'AutoComplete',
-          type: FIELD_TYPE.AutoComplete,
-          hidden: true,
-          mandatory: true,
-          row: 8,
-          column: 1,
-        },
-        {
-          name: 'Grid',
-          type: FIELD_TYPE.Grid,
-          hidden: false,
-          mandatory: false,
-          row: 9,
-          column: 1,
-        },
-        {
-          name: 'LookUp',
-          type: FIELD_TYPE.LookUp,
+          type: 9,
           hidden: true,
           mandatory: true,
           row: 10,

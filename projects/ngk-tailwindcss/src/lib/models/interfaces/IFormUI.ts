@@ -1,15 +1,4 @@
-export enum FIELD_TYPE {
-  TextBox,
-  RadioButton,
-  RadioButtonGroup,
-  CheckBox,
-  CheckBoxGroup,
-  DropDown,
-  ComboBox,
-  AutoComplete,
-  Grid,
-  LookUp,
-}
+import { FIELD_TYPE } from '../enums';
 
 export interface FormUI {
   groups: Group[];
